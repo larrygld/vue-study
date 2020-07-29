@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model指令</title>
+<!--    双向数据绑定，即表单元素的改变后，绑定model中的值也会随之改变，引用的插值表达式也会发生改变-->
+<!--    可以绑定的元素：input select textarea 组件-->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+   <input type="text" v-model="name">
+    <br>
+    用户的输入为：{{name}}
+
+
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            name:"",
+
+        }
+    })
+</script>
+
+</body>
+</html>
