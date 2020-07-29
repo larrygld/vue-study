@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind示例</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .bgblue{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .bgred{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--vue挂载点-->
+<div id="app">
+    <img v-bind:src="src">
+    <div v-bind:class="{bgblue:flag}"></div>
+<!--    <div :class="cname2"></div>-->
+
+</div>
+
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            src:"../img/bg1.jpg",
+            cname1:"bgblue",
+            cname2:"bgred",
+            flag:false
+        }
+
+    });
+</script>
+
+</body>
+</html>
