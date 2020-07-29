@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+    <!--全局组件ctgu-->
+        <ctgustu></ctgustu>
+
+    </div>
+
+    <template id="mytmp">
+        <ul>
+            <li v-for="val in list">
+                {{val}}
+            </li>
+        </ul>
+    </template>
+
+    <script>
+
+        new Vue({
+            el:"#app",
+            //局部组件
+            components:{
+                //局部组件名
+                "ctgustu":{
+                    template:'#mytmp',
+                    //组件中定义data的格式，必须使用方法的形式
+                    data(){
+                        return{
+                            list:[
+                                "111",'222','333'
+                            ]
+                        }
+                    }
+                }
+            }
+
+        });
+    </script>
+
+</body>
+</html>

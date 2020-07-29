@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+    <!--全局组件ctgu-->
+        <ctgu></ctgu>
+
+    </div>
+
+    <template id="mytmp">
+        <div>
+            <img src="../img/logo.png">
+            <br>
+            <button @click="showInfo">点我</button>
+        </div>
+    </template>
+
+    <script>
+
+        //定义全局组件
+        var comp = Vue.extend({
+    //        template: '<div><img src="../img/logo.png"></div>
+            template:'#mytmp',
+            //组件中定义data的格式，必须使用方法的形式
+            data(){
+                return{
+                    msg:"121313321233112"
+                }
+            },
+            methods:{
+                showInfo(){
+                    alert(this.msg);
+                }
+            }
+        })
+
+        //注册组件
+        Vue.component("ctgu", comp);
+
+        new Vue({
+            el:"#app",
+            data:{
+
+
+            },
+
+        });
+    </script>
+
+</body>
+</html>
