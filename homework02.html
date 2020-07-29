@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业二</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body style="background-color: pink">
+
+<div id="app">
+
+        <div v-for="pic in picArr" style="display: inline-block">
+            <div style="width: 150px; height: 200px; border: 1px solid black; word-wrap: break-word;margin: 15px">
+                <img v-bind:src=pic.src style="width: 150px;height: 130px"></img>
+                {{pic.id}}
+                <p style="font-size: 2px">{{pic.msg}}</p>
+            </div>
+        </div>
+
+
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            picArr:[
+                {id:"169", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic01.png"},
+                {id:"170", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic02.png"},
+                {id:"171", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic03.png"},
+                {id:"172", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic04.png"},
+                {id:"173", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic05.png"},
+                {id:"174", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic06.png"},
+                {id:"175", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic06.png"},
+                {id:"176", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic06.png"},
+                {id:"177", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic06.png"},
+                {id:"178", msg:"多么美丽的图片啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊 ！！！！！", src:"./img/pic06.png"}
+
+
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>

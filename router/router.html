@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>路由示例</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home">主页</router-link>
+    <router-link to="/set">设置</router-link>
+    <router-link to="/about">关于</router-link>
+    <!--router-view是用于显示路由组件的容器-->
+    <router-view></router-view>
+</div>
+<template id="homeTmpl">
+    <div style="width: 800px;height: 400px;background-color: blue;">
+        <h3>这是主页面</h3>
+    </div>
+</template>
+<template id="settingTmpl">
+    <div style="width: 800px;height: 400px;background-color: yellow;">
+        <h3>这是设置页面</h3>
+    </div>
+</template>
+<template id="aboutTmpl">
+    <div style="width: 800px;height: 400px;background-color: red;">
+        <h3>这是关于页面</h3>
+    </div>
+</template>
+</body>
+<script>
+    //定义组件
+    var home = {
+        template:"#homeTmpl"
+    };
+    var set = {template:"#settingTmpl"};
+    var about = {template:"#aboutTmpl"};
+
+    //路由实例
+    var routers = new VueRouter({
+        routes:[
+            {path:"/home",component:home},
+            {path:"/set",component:set},
+            {path:"/about",component:about}
+        ]
+    });
+
+    new Vue({
+        el:"#app",
+        router:routers
+    });
+</script>
+</html>
