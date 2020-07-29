@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filer过滤器</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+<!--|管道运算符-->
+<!--    {{date}}-->
+    {{date|datefmt('/')}}  <!-- 参数传递-->
+
+    <h2>价格：{{price|addicon(unit)}}</h2>
+
+</div>
+
+<script>
+    // 全局过滤器
+    Vue.filter("datefmt",
+        function (input, n) {
+            var date = new Date(input);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var res = year + n + month + n + day;
+            return res;
+        }
+    );
+    new Vue({
+        el:"#app",
+        data:{
+            date:new Date(),
+            price:30.55,
+            unit:'￥'
+
+        },
+        //局部过滤器
+        filters:{
+            addicon(input, icon){
+                return icon + input;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
