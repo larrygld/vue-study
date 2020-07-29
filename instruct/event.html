@@ -8,7 +8,14 @@
 <body>
 
 <div id="app">
-    <button v-on:click="sayBye">点我</button>
+<!--    <button v-on:click="sayBye">点我</button>-->
+<!--    简写方式-->
+    <button @click="sayBye">点我</button>
+
+    <div @click="showDiv" style="width: 200px; height: 200px; background-color: blueviolet">
+        <p @click.stop="showPmsg">这是段落</p>
+<!--        .stop消除父子冒泡响应-->
+    </div>
 </div>
 
 <script>
@@ -22,7 +29,15 @@
                 alert("hello");
             },
             sayBye:function () {
-                alert("bye");
+                // alert("bye");
+                //调用data中的变量值，使用this.变量名
+                alert(this.msg);
+            },
+            showPmsg(){
+                console.log("p is clicked ...");
+            },
+            showDiv(){
+                console.log("div is clicked ...");
             }
 
         }
