@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for指令</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h2>V-for遍历数组</h2>
+    <ul>
+        <li v-for="(stu, index) in stuArr">
+            {{index+1}}--{{stu.age}}--{{stu.name}}--{{stu.province}}
+        </li>
+    </ul>
+    <h2>V-for遍历对象属性</h2>
+    <ul>
+<!--        (value,key,index) in user-->
+        <li v-for="(val, name, index) in teacher">
+            {{index+1}}--{{name}}--{{val}}
+    </ul>
+    <h2>V-for遍历整数数组</h2>
+    <ul>
+        <li v-for="n in 5">
+            {{n}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            stuArr:[
+                {name:"111", age:"111", province:"111"},
+                {name:"222", age:"222", province:"222"},
+                {name:"333", age:"333", province:"333"},
+                {name:"444", age:"444", province:"444"}
+            ],
+            teacher: {
+                name: "121",
+                age: "12",
+                address: "23"
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>
