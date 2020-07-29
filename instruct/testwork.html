@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课堂测试01</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <button @click="myShow">显示</button>
+    <button @click="mySha">隐藏</button>
+    <button @click="myChg">切换</button>
+    <div v-show="flag" style="margin-top:20px;width:200px;height:200px;background-color:aqua"></div>
+
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            num:3,
+            flag:true
+        },
+        methods:{
+            myShow(){
+                this.flag = true;
+            },
+            mySha(){
+                this.flag = false;
+            },
+            myChg(){
+                if(this.flag == true){
+                    this.flag = false;
+                }else{
+                    this.flag = true;
+                }
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

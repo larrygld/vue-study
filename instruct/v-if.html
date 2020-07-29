@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if指令</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h3 v-if="num==1">hello v-if</h3>
+    <h3 v-else-if="num==0">hello 111</h3>
+    <h3 v-else>hello 222</h3>
+<!--    if指令中间不能被其他标签隔开-->
+    <p v-show="flag">这是段落内容</p>
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            num:3,
+            flag:true
+        }
+    })
+</script>
+
+</body>
+</html>
