@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <button v-on:click="sayBye">点我</button>
+</div>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"<h3>这是要显示的内容</h3>"
+        },
+        methods:{
+            sayHello(){
+                alert("hello");
+            },
+            sayBye:function () {
+                alert("bye");
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>
