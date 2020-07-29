@@ -9,6 +9,7 @@
 
 <div id="app">
 
+    <button @click="myClick('vue')">点我</button>
     <button @click="myShow">显示</button>
     <button @click="mySha">隐藏</button>
     <button @click="myChg">切换</button>
@@ -37,6 +38,9 @@
                 //     this.flag = true;
                 // }
                 this.flag = !this.flag;
+            },
+            myClick(msg){
+                alert("hello " + msg)
             }
         }
     })
